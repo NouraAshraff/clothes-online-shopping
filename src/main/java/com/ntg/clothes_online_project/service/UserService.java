@@ -7,6 +7,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
-    public ResponseEntity<?> creatUser(UserDTO userdto) {
+    public void creatUser(UserDTO userdto) {
     }
 }
