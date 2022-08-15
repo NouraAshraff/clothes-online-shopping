@@ -9,11 +9,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class SignupRequest {
+public class UserDTO {
 	private String name;
 	private String userName;
 	private String email;
-	private String password;
 	private String gender;
 	private String phoneNum;
 	private String city;

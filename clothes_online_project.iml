@@ -130,5 +130,14 @@
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-jwt:1.1.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.bouncycastle:bcpkix-jdk15on:1.64" level="project" />
     <orderEntry type="library" name="Maven: org.bouncycastle:bcprov-jdk15on:1.64" level="project" />
+    <orderEntry type="library" name="Maven: io.springfox:springfox-swagger-ui:3.0.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: io.springfox:springfox-spring-webmvc:3.0.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: io.springfox:springfox-spi:3.0.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: io.springfox:springfox-schema:3.0.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: io.springfox:springfox-core:3.0.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: io.springfox:springfox-spring-web:3.0.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: io.github.classgraph:classgraph:4.8.83" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.springframework.plugin:spring-plugin-core:2.0.0.RELEASE" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.springframework.plugin:spring-plugin-metadata:2.0.0.RELEASE" level="project" />
   </component>
 </module>
