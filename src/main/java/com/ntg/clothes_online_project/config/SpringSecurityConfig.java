@@ -3,7 +3,7 @@ package com.ntg.clothes_online_project.config;
 
 import com.ntg.clothes_online_project.jwt.AuthEntryPointJwt;
 import com.ntg.clothes_online_project.jwt.AuthTokenFilter;
-import com.ntg.clothes_online_project.service.Impl.UserService;
+import com.ntg.clothes_online_project.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

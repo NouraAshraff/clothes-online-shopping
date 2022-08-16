@@ -1,7 +1,7 @@
 package com.ntg.clothes_online_project.controller;
 import com.ntg.clothes_online_project.dto.*;
 import com.ntg.clothes_online_project.entity.User;
-import com.ntg.clothes_online_project.service.Impl.UserService;
+import com.ntg.clothes_online_project.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,4 +1,4 @@
-package com.ntg.clothes_online_project.service.Impl;
+package com.ntg.clothes_online_project.service;
 
 import com.ntg.clothes_online_project.entity.Product;
 import com.ntg.clothes_online_project.repository.ProductRepository;
