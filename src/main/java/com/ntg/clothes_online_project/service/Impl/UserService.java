@@ -52,6 +52,18 @@ public class UserService implements UserDetailsService {
 
 
     public ResponseEntity<?> registerUser(User user) {
+        if (user.getEmail()==null) {
+            return ResponseEntity.badRequest().body(new MessageResponse("Error: Email can not be null!"));
+        }
+        if (user.getName()==null) {
+            return ResponseEntity.badRequest().body(new MessageResponse("Error: Name can not be null!"));
+        }
+        if (user.getUserName()==null) {
+            return ResponseEntity.badRequest().body(new MessageResponse("Error: User Name can not be null!"));
+        }
+        if (user.getPassword()==null) {
+            return ResponseEntity.badRequest().body(new MessageResponse("Error: password can not be null!"));
+        }
         if (userRepository.existsByEmail(user.getEmail())) {
             return ResponseEntity.badRequest().body(new MessageResponse("Error: You're already registered please try to login!"));
         }
@@ -69,8 +81,7 @@ public class UserService implements UserDetailsService {
         String jwt = jwtUtils.generateJwtToken(authentication);
 
         CustomUser userDetails = (CustomUser) authentication.getPrincipal();
-        //List<String> roles = userDetails.getAuthorities().stream().map(item -> item.getAuthority())
-        //	.collect(Collectors.toList());
+
         return ResponseEntity.ok(new LoginResponse(userDetails.getUserName(), userDetails.getUsername(), jwt));
     }
 
@@ -92,22 +103,7 @@ public class UserService implements UserDetailsService {
 
     }
 
-//    public ResponseEntity<?> updateProfile() {
-//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-//        CustomUser loginUser = (CustomUser) auth.getPrincipal();
-//
-//    }
- /*
- @GetMapping(value = "/getFullName")
-	public String getAuthUserFullName() {
-		String fullName = null;
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		CustomUser loginUser = (CustomUser) auth.getPrincipal();
 
-		fullName = loginUser.getFirstName() + " " + loginUser.getLastName();
 
-		return fullName;
-	}
-  */
 
 }
