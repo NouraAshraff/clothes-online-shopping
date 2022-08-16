@@ -91,4 +91,23 @@ public class UserService implements UserDetailsService {
 
 
     }
+
+//    public ResponseEntity<?> updateProfile() {
+//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//        CustomUser loginUser = (CustomUser) auth.getPrincipal();
+//
+//    }
+ /*
+ @GetMapping(value = "/getFullName")
+	public String getAuthUserFullName() {
+		String fullName = null;
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		CustomUser loginUser = (CustomUser) auth.getPrincipal();
+
+		fullName = loginUser.getFirstName() + " " + loginUser.getLastName();
+
+		return fullName;
+	}
+  */
+
 }

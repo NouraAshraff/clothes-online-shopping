@@ -1,4 +1,5 @@
 package com.ntg.clothes_online_project.controller;
+
 import com.ntg.clothes_online_project.dto.*;
 import com.ntg.clothes_online_project.entity.User;
 import com.ntg.clothes_online_project.service.Impl.UserService;
@@ -11,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/user")
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class UserController {
     @Autowired
    private UserService userService;
@@ -32,6 +34,10 @@ public class UserController {
         return userService.loginUser(loginRequest);
     }
 
+//    @PutMapping(value = "/profile")
+//    public  ResponseEntity<?> updateProfile(){
+//        return userService.updateProfile();
+//    }
 
     @GetMapping(value = "/all")
     public List<UserDTO> getAllUsers() {

@@ -130,14 +130,17 @@
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-jwt:1.1.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.bouncycastle:bcpkix-jdk15on:1.64" level="project" />
     <orderEntry type="library" name="Maven: org.bouncycastle:bcprov-jdk15on:1.64" level="project" />
-    <orderEntry type="library" name="Maven: io.springfox:springfox-swagger-ui:3.0.0" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: io.springfox:springfox-spring-webmvc:3.0.0" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: io.springfox:springfox-spi:3.0.0" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: io.springfox:springfox-schema:3.0.0" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: io.springfox:springfox-core:3.0.0" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: io.springfox:springfox-spring-web:3.0.0" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: io.github.classgraph:classgraph:4.8.83" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.springframework.plugin:spring-plugin-core:2.0.0.RELEASE" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.springframework.plugin:spring-plugin-metadata:2.0.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springdoc:springdoc-openapi-ui:1.6.10" level="project" />
+    <orderEntry type="library" name="Maven: org.springdoc:springdoc-openapi-webmvc-core:1.6.10" level="project" />
+    <orderEntry type="library" name="Maven: org.springdoc:springdoc-openapi-common:1.6.10" level="project" />
+    <orderEntry type="library" name="Maven: io.swagger.core.v3:swagger-core:2.2.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.12.0" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.13.3" level="project" />
+    <orderEntry type="library" name="Maven: io.swagger.core.v3:swagger-annotations:2.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.swagger.core.v3:swagger-models:2.2.2" level="project" />
+    <orderEntry type="library" name="Maven: jakarta.validation:jakarta.validation-api:2.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:swagger-ui:4.13.2" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:webjars-locator-core:0.50" level="project" />
+    <orderEntry type="library" name="Maven: io.github.classgraph:classgraph:4.8.149" level="project" />
   </component>
 </module>
