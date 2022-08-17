@@ -34,8 +34,7 @@ public class UserValidation {
         if (userRepository.existsByUserName(user.getUserName())) {
             return ResponseEntity.badRequest().body(new MessageResponse("Error: You're already registered please try to login!"));
         }
-        user.setPassword(encoder.encode(user.getPassword()));
-        userRepository.save(user);
-        return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+        return null;
+
     }
 }

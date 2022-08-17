@@ -55,7 +55,13 @@ public class UserService implements UserDetailsService {
 
 
     public ResponseEntity<?> registerUser(User user) {
-       return userValidation.validateUser(user);
+        ResponseEntity<MessageResponse> validation = userValidation.validateUser(user);
+        if(validation!=null){
+            return validation;
+        }
+        user.setPassword(encoder.encode(user.getPassword()));
+        userRepository.save(user);
+        return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
 
     }
 
