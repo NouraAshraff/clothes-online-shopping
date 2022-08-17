@@ -1,8 +1,11 @@
 package com.ntg.clothes_online_project.controller;
 
+import com.ntg.clothes_online_project.dto.MessageResponse;
 import com.ntg.clothes_online_project.entity.Product;
+import com.ntg.clothes_online_project.enums.Category;
 import com.ntg.clothes_online_project.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -34,5 +37,15 @@ public class ProductController {
     @DeleteMapping(value = "/deleteProduct/{id}")
     public boolean deleteProduct(@PathVariable(value = "empId") Long id) {
         return productService.deleteProductById(id);
+    }
+
+    @GetMapping(value = "/getProductByCategory/{category}")
+    public ResponseEntity<?> getProductByCategory(@PathVariable(value = "category") Category category){
+        List<Product> l =  productService.getByCategory(category);
+        if (l.isEmpty()) {
+            return ResponseEntity.ok().body(new MessageResponse("No " + category.name() + " Products were found"));
+        }
+        else
+            return ResponseEntity.ok().body(l);
     }
 }

@@ -18,7 +18,6 @@ public class User {
     private String name;
 
 
-
     @Column(name = "userName",  nullable = false, unique = true)
     private String userName;
 
@@ -27,7 +26,6 @@ public class User {
     private String email;
 
     @Column(name = "password",nullable = false)
-
     private String password;
 
 

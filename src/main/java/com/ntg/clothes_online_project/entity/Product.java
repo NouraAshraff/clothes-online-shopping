@@ -24,7 +24,7 @@ public class Product {
     private String size;
 
     @Column(name = "category")
-    private String categoory;
+    private String category;
 
     @Column(name = "description")
     private String description;
@@ -46,7 +46,7 @@ public class Product {
         this.price = price;
         this.image = image;
         this.size = size;
-        this.categoory = category;
+        this.category = category;
         this.description = description;
         this.isAddedToCart = isAddedToCart;
         this.boughtItemsCount = boughtItemsCount;
@@ -93,12 +93,12 @@ public class Product {
         this.size = size;
     }
 
-    public String getCategoory() {
-        return categoory;
+    public String getCategory() {
+        return category;
     }
 
-    public void setCategoory(String categoory) {
-        this.categoory = categoory;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getDescription() {

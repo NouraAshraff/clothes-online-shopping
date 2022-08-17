@@ -1,10 +1,14 @@
 package com.ntg.clothes_online_project.service;
 
+import com.ntg.clothes_online_project.dto.MessageResponse;
 import com.ntg.clothes_online_project.entity.Product;
+import com.ntg.clothes_online_project.enums.Category;
 import com.ntg.clothes_online_project.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,6 +39,10 @@ public class ProductService {
             return true;
         }
         return false;
+    }
+
+    public List<Product> getByCategory(Category category){
+        return (List<Product>) productRepository.findByCategory(category.name());
     }
 
 }
