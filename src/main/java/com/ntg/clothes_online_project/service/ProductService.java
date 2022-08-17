@@ -3,12 +3,13 @@ package com.ntg.clothes_online_project.service;
 import com.ntg.clothes_online_project.dto.MessageResponse;
 import com.ntg.clothes_online_project.entity.Product;
 import com.ntg.clothes_online_project.enums.Category;
+import com.ntg.clothes_online_project.enums.Size;
 import com.ntg.clothes_online_project.repository.ProductRepository;
+import com.ntg.clothes_online_project.validation.ProductValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,11 +19,16 @@ public class ProductService {
     @Autowired
     ProductRepository productRepository;
 
-    public Product createNewProduct(Product product) {
-        if (product != null) {
-            return productRepository.save(product);
+    @Autowired
+    ProductValidation productValidation;
+
+    public ResponseEntity<?> createNewProduct(Product product) {
+        ResponseEntity<MessageResponse> validation = productValidation.validateProduct(product);
+        if(validation!=null){
+            return validation;
         }
-        return null;
+        productRepository.save(product);
+        return ResponseEntity.ok(new MessageResponse("Product added successfully!"));
     }
 
     public List<Product> getAllProducts() {
@@ -47,6 +53,18 @@ public class ProductService {
 
     public List<Product> getByCategory(Category category){
         return (List<Product>) productRepository.findByCategory(category.name());
+    }
+
+    public List<Product> getBySize(Size size){
+        return (List<Product>) productRepository.findBySize(size.name());
+    }
+
+    public Product updatePrice(Product productToBeUpdated){
+        Product product = (Product) productRepository.findById(productToBeUpdated.getId()).get();
+        if(productToBeUpdated.getPrice() != null) {
+            product.setPrice(productToBeUpdated.getPrice());
+        }
+        return productRepository.save(product);
     }
 
 }

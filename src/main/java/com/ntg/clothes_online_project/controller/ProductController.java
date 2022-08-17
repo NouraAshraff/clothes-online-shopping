@@ -3,16 +3,16 @@ package com.ntg.clothes_online_project.controller;
 import com.ntg.clothes_online_project.dto.MessageResponse;
 import com.ntg.clothes_online_project.entity.Product;
 import com.ntg.clothes_online_project.enums.Category;
+import com.ntg.clothes_online_project.enums.Size;
 import com.ntg.clothes_online_project.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
-@RequestMapping( "/api/product")
+@RequestMapping("/api/product")
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class ProductController {
 
@@ -20,7 +20,7 @@ public class ProductController {
     ProductService productService;
 
     @PostMapping(value = "/addNewProduct")
-    public Product addNewProduct (@RequestBody Product product){
+    public ResponseEntity<?> addNewProduct (@RequestBody Product product){
             return productService.createNewProduct(product);
     }
 
@@ -30,10 +30,10 @@ public class ProductController {
     }
 
     @GetMapping(value = "/getById/{id}")
-    public ResponseEntity<?> getProductById(@PathVariable(value = "id") Long id) {
-       return productService.getProductById(id);
-
+    public ResponseEntity<?> getProductById(@PathVariable Long id) {
+        return productService.getProductById(id);
     }
+
     @DeleteMapping(value = "/deleteProduct/{id}")
     public boolean deleteProduct(@PathVariable(value = "empId") Long id) {
         return productService.deleteProductById(id);
@@ -47,5 +47,21 @@ public class ProductController {
         }
         else
             return ResponseEntity.ok().body(l);
+    }
+
+    @GetMapping(value = "/getProductBySize/{size}")
+    public ResponseEntity<?> getProductBySize(@PathVariable(value = "size") Size size){
+        List<Product> list =  productService.getBySize(size);
+        if (list.isEmpty()) {
+            return ResponseEntity.ok().body(new MessageResponse("No " + size.name() + " Products were found"));
+        }
+        else
+            return ResponseEntity.ok().body(list);
+    }
+
+    @GetMapping(value  = "/updatePriceById/{id}")
+    public ResponseEntity<?> updatePriceById(@RequestBody Product productToBeUpdated){
+        productService.updatePrice(productToBeUpdated);
+        return ResponseEntity.ok().body(new MessageResponse("Product updated!"));
     }
 }

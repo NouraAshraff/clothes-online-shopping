@@ -14,9 +14,9 @@ public class Product {
     private String name;
 
     @Column(name = "price")
-    private double price;
+    private Double price;
 
-    @Column(name = "image" , length = 500)
+    @Column(name = "image")
     private String image;
 
     @Column(name = "size")
@@ -40,7 +40,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(String name, double price, String image, String size, String category, String description, boolean isAddedToCart, int boughtItemsCount, String color) {
+    public Product(String name, Double price, String image, String size, String category, String description, Boolean isAddedToCart, Integer boughtItemsCount, String color) {
         this.name = name;
         this.price = price;
         this.image = image;
@@ -68,11 +68,11 @@ public class Product {
         this.name = name;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
@@ -108,19 +108,19 @@ public class Product {
         this.description = description;
     }
 
-    public boolean isAddedToCart() {
+    public Boolean isAddedToCart() {
         return isAddedToCart;
     }
 
-    public void setAddedToCart(boolean addedToCart) {
-        isAddedToCart = addedToCart;
+    public void setAddedToCart(Boolean addedToCart) {
+        this.isAddedToCart = addedToCart;
     }
 
-    public int getBoughtItemsCount() {
+    public Integer getBoughtItemsCount() {
         return boughtItemsCount;
     }
 
-    public void setBoughtItemsCount(int boughtItemsCount) {
+    public void setBoughtItemsCount(Integer boughtItemsCount) {
         this.boughtItemsCount = boughtItemsCount;
     }
 

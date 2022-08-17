@@ -10,7 +10,18 @@ import java.util.Optional;
 @Repository
 public interface ProductRepository extends CrudRepository<Product, Long> {
 
-    public Optional<Product> findById(Long id);
-    public List<Product> findByCategory(String category);
+    Optional<Product> findById(Long id);
+    List<Product> findByCategory(String category);
+    List<Product> findBySize(String size);
+    boolean existsByName(String name);
+    boolean existsByPrice(Double price);
+    boolean existsByImage(String image);
+    boolean existsByDescription(String description);
+    boolean existsBySize(String size);
+    boolean existsByCategory(String category);
+    boolean existsByColor(String color);
+    boolean existsByBoughtItemsCount(Integer count);
+
+
 
 }
