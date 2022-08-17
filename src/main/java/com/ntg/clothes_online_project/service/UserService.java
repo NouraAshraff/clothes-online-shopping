@@ -4,6 +4,7 @@ import com.ntg.clothes_online_project.dto.*;
 import com.ntg.clothes_online_project.entity.User;
 import com.ntg.clothes_online_project.jwt.JwtUtils;
 import com.ntg.clothes_online_project.repository.UserRepository;
+import com.ntg.clothes_online_project.validation.UserValidation;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -34,6 +35,8 @@ public class UserService implements UserDetailsService {
     AuthenticationManager authenticationManager;
     @Autowired
     JwtUtils jwtUtils;
+    @Autowired
+   private UserValidation userValidation;
 
 
     @Override
@@ -52,26 +55,9 @@ public class UserService implements UserDetailsService {
 
 
     public ResponseEntity<?> registerUser(User user) {
-        if (user.getEmail()==null) {
-            return ResponseEntity.badRequest().body(new MessageResponse("Error: Email can not be null!"));
-        }
-        if (user.getName()==null) {
-            return ResponseEntity.badRequest().body(new MessageResponse("Error: Name can not be null!"));
-        }
-        if (user.getUserName()==null) {
-            return ResponseEntity.badRequest().body(new MessageResponse("Error: User Name can not be null!"));
-        }
-        if (user.getPassword()==null) {
-            return ResponseEntity.badRequest().body(new MessageResponse("Error: password can not be null!"));
-        }
-        if (userRepository.existsByEmail(user.getEmail())) {
-            return ResponseEntity.badRequest().body(new MessageResponse("Error: You're already registered please try to login!"));
-        }
-        user.setPassword(encoder.encode(user.getPassword()));
-        userRepository.save(user);
-        return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
-    }
+       return userValidation.validateUser(user);
 
+    }
 
     public ResponseEntity<?> loginUser(LoginRequest loginRequest) {
         Authentication authentication = authenticationManager.authenticate(
