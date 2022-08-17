@@ -35,7 +35,13 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	private static final String[] AUTH_WHITELIST = {
 			// -- Swagger UI v3 (OpenAPI)
-			"/v3/api-docs/**", "/swagger-ui/**", "/user/register", "/user/login","/user/all",
+			"/v3/api-docs/**",
+			"/swagger-ui/**",
+			"/spring-security-rest/**",
+			"/your-app-root/**",
+			"/user/register",
+			"/user/login",
+			"/user/test",
 			"/spring-security-rest/**"
 			// other public endpoints of your API may be appended to this array
 	};

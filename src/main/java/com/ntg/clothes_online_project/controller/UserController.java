@@ -1,4 +1,5 @@
 package com.ntg.clothes_online_project.controller;
+
 import com.ntg.clothes_online_project.dto.*;
 import com.ntg.clothes_online_project.entity.User;
 import com.ntg.clothes_online_project.service.UserService;
@@ -33,6 +34,10 @@ public class UserController {
         return userService.loginUser(loginRequest);
     }
 
+//    @PutMapping(value = "/profile")
+//    public  ResponseEntity<?> updateProfile(){
+//        return userService.updateProfile();
+//    }
 
     @GetMapping(value = "/all")
     public List<UserDTO> getAllUsers() {
