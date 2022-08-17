@@ -30,10 +30,10 @@ public class ProductController {
     }
 
     @GetMapping(value = "/getById/{id}")
-    public Optional<Product> getProductById(@PathVariable Long id) {
-        return productService.getProductById(id);
-    }
+    public ResponseEntity<?> getProductById(@PathVariable(value = "id") Long id) {
+       return productService.getProductById(id);
 
+    }
     @DeleteMapping(value = "/deleteProduct/{id}")
     public boolean deleteProduct(@PathVariable(value = "empId") Long id) {
         return productService.deleteProductById(id);

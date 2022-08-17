@@ -17,7 +17,7 @@ public class Product {
     @Column(name = "price")
     private double price;
 
-    @Column(name = "image")
+    @Column(name = "image" , length = 500)
     private URL image;
 
     @Column(name = "size")
@@ -30,7 +30,7 @@ public class Product {
     private String description;
 
     @Column(name = "already_bought")
-    private boolean isAddedToCart;
+    private Boolean isAddedToCart;
 
     @Column(name = "bought_items_count")
     private int boughtItemsCount;

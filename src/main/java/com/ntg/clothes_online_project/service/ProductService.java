@@ -29,8 +29,12 @@ public class ProductService {
         return (List<Product>) productRepository.findAll();
     }
 
-    public Optional<Product> getProductById(Long id) {
-        return productRepository.findById(id);
+    public ResponseEntity<?> getProductById(Long id) {
+        Optional<Product> product = productRepository.findById(id);
+        if(product == null)
+            return ResponseEntity.badRequest().body(new MessageResponse("No product by this Id was found"));
+        else
+            return ResponseEntity.ok().body(product);
     }
 
     public boolean deleteProductById(Long id) {
