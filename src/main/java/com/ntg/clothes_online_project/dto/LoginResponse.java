@@ -9,8 +9,8 @@ import lombok.*;
 @ToString
 public class LoginResponse {
 
-    private String email;
     private String name;
+    private String email;
     private String token;
 
 

@@ -35,7 +35,7 @@ public class ProductController {
     }
 
     @DeleteMapping(value = "/deleteProduct/{id}")
-    public boolean deleteProduct(@PathVariable(value = "empId") Long id) {
+    public boolean deleteProduct(@PathVariable(value = "id") Long id) {
         return productService.deleteProductById(id);
     }
 
@@ -59,7 +59,7 @@ public class ProductController {
             return ResponseEntity.ok().body(list);
     }
 
-    @GetMapping(value  = "/updatePriceById/{id}")
+    @PutMapping(value  = "/updatePriceById/{id}")
     public ResponseEntity<?> updatePriceById(@RequestBody Product productToBeUpdated){
         productService.updatePrice(productToBeUpdated);
         return ResponseEntity.ok().body(new MessageResponse("Product updated!"));
