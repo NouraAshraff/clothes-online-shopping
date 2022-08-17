@@ -1,4 +1,4 @@
-package com.ntg.clothes_online_project.service.Impl;
+package com.ntg.clothes_online_project.service;
 
 import com.ntg.clothes_online_project.dto.*;
 import com.ntg.clothes_online_project.entity.User;

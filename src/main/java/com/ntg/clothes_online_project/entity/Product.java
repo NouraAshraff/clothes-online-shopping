@@ -1,11 +1,7 @@
 package com.ntg.clothes_online_project.entity;
 
-import com.ntg.clothes_online_project.enums.Gender;
-import com.ntg.clothes_online_project.enums.Size;
 
 import javax.persistence.*;
-import java.awt.*;
-import java.net.URL;
 
 @Entity(name = "products")
 public class Product {
@@ -15,47 +11,45 @@ public class Product {
     private Long id;
 
     @Column(name = "name")
-    private String productName;
+    private String name;
 
     @Column(name = "price")
-    private double productPrice;
+    private double price;
 
-    @Column(name = "image")
-    private URL productImage;
+    @Column(name = "image" , length = 500)
+    private String image;
 
     @Column(name = "size")
-    @Enumerated(EnumType.STRING)
-    private Size productSize;
+    private String size;
 
-    @Column(name = "gender")
-    @Enumerated(EnumType.STRING)
-    private Gender productGender;
+    @Column(name = "category")
+    private String category;
 
     @Column(name = "description")
-    private String productDescription;
+    private String description;
 
     @Column(name = "already_bought")
-    private boolean isAddedToCart;
+    private Boolean isAddedToCart;
 
     @Column(name = "bought_items_count")
-    private int boughtItemsCount;
+    private Integer boughtItemsCount;
 
     @Column(name = "color")
-    private Color productColor;
+    private String color;
 
     public Product() {
     }
 
-    public Product(String productName, double productPrice, URL productImage, Size productSize, Gender productGender, String productDescription, boolean isAddedToCart, int boughtItemsCount, Color productColor) {
-        this.productName = productName;
-        this.productPrice = productPrice;
-        this.productImage = productImage;
-        this.productSize = productSize;
-        this.productGender = productGender;
-        this.productDescription = productDescription;
+    public Product(String name, double price, String image, String size, String category, String description, boolean isAddedToCart, int boughtItemsCount, String color) {
+        this.name = name;
+        this.price = price;
+        this.image = image;
+        this.size = size;
+        this.category = category;
+        this.description = description;
         this.isAddedToCart = isAddedToCart;
         this.boughtItemsCount = boughtItemsCount;
-        this.productColor = productColor;
+        this.color = color;
     }
 
     public Long getId() {
@@ -66,52 +60,52 @@ public class Product {
         this.id = id;
     }
 
-    public String getProductName() {
-        return productName;
+    public String getName() {
+        return name;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public double getProductPrice() {
-        return productPrice;
+    public double getPrice() {
+        return price;
     }
 
-    public void setProductPrice(double productPrice) {
-        this.productPrice = productPrice;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
-    public URL getProductImage() {
-        return productImage;
+    public String getImage() {
+        return image;
     }
 
-    public void setProductImage(URL productImage) {
-        this.productImage = productImage;
+    public void setImage(String productImage) {
+        this.image = productImage;
     }
 
-    public Size getProductSize() {
-        return productSize;
+    public String getSize() {
+        return size;
     }
 
-    public void setProductSize(Size productSize) {
-        this.productSize = productSize;
+    public void setSize(String size) {
+        this.size = size;
     }
 
-    public Gender getProductGender() {
-        return productGender;
+    public String getCategory() {
+        return category;
     }
 
-    public void setProductGender(Gender productGender) {
-        this.productGender = productGender;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
-    public String getProductDescription() {
-        return productDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setProductDescription(String productDescription) {
-        this.productDescription = productDescription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public boolean isAddedToCart() {
@@ -130,11 +124,11 @@ public class Product {
         this.boughtItemsCount = boughtItemsCount;
     }
 
-    public Color getProductColor() {
-        return productColor;
+    public String getColor() {
+        return color;
     }
 
-    public void setProductColor(Color productColor) {
-        this.productColor = productColor;
+    public void setColor(String color) {
+        this.color = color;
     }
 }
