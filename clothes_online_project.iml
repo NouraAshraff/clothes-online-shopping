@@ -15,7 +15,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
-          <factory-entry name="clothes_online_project" />
+          <factory-entry name="clothes_online_project" value="8a6171d1-5f2f-45eb-b267-f4f5a4a19762" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>

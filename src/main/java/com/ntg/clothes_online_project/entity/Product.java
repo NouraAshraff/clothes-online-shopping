@@ -2,7 +2,6 @@ package com.ntg.clothes_online_project.entity;
 
 
 import javax.persistence.*;
-import java.net.URL;
 
 @Entity(name = "products")
 public class Product {
@@ -18,7 +17,7 @@ public class Product {
     private double price;
 
     @Column(name = "image" , length = 500)
-    private URL image;
+    private String image;
 
     @Column(name = "size")
     private String size;
@@ -41,7 +40,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(String name, double price, URL image, String size, String category, String description, boolean isAddedToCart, int boughtItemsCount, String color) {
+    public Product(String name, double price, String image, String size, String category, String description, boolean isAddedToCart, int boughtItemsCount, String color) {
         this.name = name;
         this.price = price;
         this.image = image;
@@ -77,11 +76,11 @@ public class Product {
         this.price = price;
     }
 
-    public URL getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(URL productImage) {
+    public void setImage(String productImage) {
         this.image = productImage;
     }
 
