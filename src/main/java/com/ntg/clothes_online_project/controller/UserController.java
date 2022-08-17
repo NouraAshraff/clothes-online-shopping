@@ -17,12 +17,6 @@ public class UserController {
     @Autowired
    private UserService userService;
 
-    @GetMapping(value = "/test")
-    public String creatUser(){
-        return"Hello from here";
-
-    }
-
     @PostMapping(value = "/register")
     public ResponseEntity<?> registerUser(@RequestBody User user) {
         return userService.registerUser(user);

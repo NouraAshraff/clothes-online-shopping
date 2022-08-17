@@ -41,7 +41,6 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 			"/your-app-root/**",
 			"/user/register",
 			"/user/login",
-			"/user/test",
 			"/spring-security-rest/**"
 			// other public endpoints of your API may be appended to this array
 	};
