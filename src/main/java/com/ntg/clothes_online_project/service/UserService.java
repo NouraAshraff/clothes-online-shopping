@@ -28,8 +28,6 @@ public class UserService implements UserDetailsService {
     private UserRepository userRepository;
 
     @Autowired
-    private PasswordEncoder bcryptPasswordEncoder;
-    @Autowired
     PasswordEncoder encoder;
     @Autowired
     AuthenticationManager authenticationManager;
@@ -79,23 +77,30 @@ public class UserService implements UserDetailsService {
 
     public List<UserDTO> getAllUsers() {
        List<User>users= (List<User>) userRepository.findAll();
-       List<UserDTO> usersDtos = null;
+       List<UserDTO> usersDTOS = null;
         if(!users.isEmpty()){
-            usersDtos=new ArrayList<>();
-            UserDTO userDTO = null;
+            usersDTOS=new ArrayList<>();
+            UserDTO userDTO ;
+
             for (User user:users) {
                 userDTO = new UserDTO();
                 BeanUtils.copyProperties(user,userDTO);
-                usersDtos.add(userDTO);
+                usersDTOS.add(userDTO);
             }
         }
-
-        return usersDtos;
-
-
+        return usersDTOS;
     }
 
+    public ResponseEntity<?> updateProfile(UpdateProfileRequest request) {
+        User user = userRepository.findByEmail(request.getEmail());
+        if(user!= null){
+            user.setName(request.getName());
+            user.setPassword(encoder.encode(request.getPassword()));
+            userRepository.save(user);
+            return ResponseEntity.ok(new MessageResponse("Updated successfully!"));
 
+        }
+        return ResponseEntity.badRequest().body(new MessageResponse("No User was found with this mail"));
 
-
+    }
 }

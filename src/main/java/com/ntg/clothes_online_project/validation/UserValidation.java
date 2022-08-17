@@ -12,8 +12,7 @@ import org.springframework.stereotype.Component;
 public class UserValidation {
     @Autowired
     private UserRepository userRepository;
-    @Autowired
-    PasswordEncoder encoder;
+
 
     public ResponseEntity<MessageResponse> validateUser(User user) {
         if (user.getEmail()==null) {

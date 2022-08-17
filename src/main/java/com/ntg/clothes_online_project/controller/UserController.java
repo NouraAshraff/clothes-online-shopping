@@ -34,10 +34,10 @@ public class UserController {
         return userService.loginUser(loginRequest);
     }
 
-//    @PutMapping(value = "/profile")
-//    public  ResponseEntity<?> updateProfile(){
-//        return userService.updateProfile();
-//    }
+    @PutMapping(value = "/profile")
+    public  ResponseEntity<?> updateProfile(@RequestBody UpdateProfileRequest request){
+        return userService.updateProfile(request);
+    }
 
     @GetMapping(value = "/all")
     public List<UserDTO> getAllUsers() {
