@@ -33,7 +33,7 @@ public class Product {
     private Boolean isAddedToCart;
 
     @Column(name = "bought_items_count")
-    private int boughtItemsCount;
+    private Integer boughtItemsCount;
 
     @Column(name = "color")
     private String color;
