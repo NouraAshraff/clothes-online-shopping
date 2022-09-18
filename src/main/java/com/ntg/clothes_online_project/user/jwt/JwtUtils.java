@@ -1,6 +1,6 @@
-package com.ntg.clothes_online_project.jwt;
-import com.ntg.clothes_online_project.dto.CustomUser;
+package com.ntg.clothes_online_project.user.jwt;
 
+import com.ntg.clothes_online_project.user.dto.CustomUser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;

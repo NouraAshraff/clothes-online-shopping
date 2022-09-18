@@ -1,9 +1,9 @@
-package com.ntg.clothes_online_project.config;
+package com.ntg.clothes_online_project.user.config;
 
 
-import com.ntg.clothes_online_project.jwt.AuthEntryPointJwt;
-import com.ntg.clothes_online_project.jwt.AuthTokenFilter;
-import com.ntg.clothes_online_project.service.UserService;
+import com.ntg.clothes_online_project.user.jwt.AuthEntryPointJwt;
+import com.ntg.clothes_online_project.user.jwt.AuthTokenFilter;
+import com.ntg.clothes_online_project.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -39,9 +39,10 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 			"/swagger-ui/**",
 			"/spring-security-rest/**",
 			"/your-app-root/**",
-			"/user/register",
-			"/user/login",
-			"/spring-security-rest/**"
+			"/com/ntg/clothes_online_project/user/register",
+			"/com/ntg/clothes_online_project/user/login",
+			"/spring-security-rest/**",
+			"/user/login"
 			// other public endpoints of your API may be appended to this array
 	};
 

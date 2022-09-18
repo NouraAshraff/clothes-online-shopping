@@ -1,6 +1,6 @@
-package com.ntg.clothes_online_project.jwt;
+package com.ntg.clothes_online_project.user.jwt;
 
-import com.ntg.clothes_online_project.service.UserService;
+import com.ntg.clothes_online_project.user.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

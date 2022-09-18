@@ -1,10 +1,10 @@
-package com.ntg.clothes_online_project.service;
+package com.ntg.clothes_online_project.user.service;
 
-import com.ntg.clothes_online_project.dto.*;
-import com.ntg.clothes_online_project.entity.User;
-import com.ntg.clothes_online_project.jwt.JwtUtils;
-import com.ntg.clothes_online_project.repository.UserRepository;
-import com.ntg.clothes_online_project.validation.UserValidation;
+import com.ntg.clothes_online_project.user.dto.*;
+import com.ntg.clothes_online_project.user.entity.User;
+import com.ntg.clothes_online_project.user.jwt.JwtUtils;
+import com.ntg.clothes_online_project.user.repository.UserRepository;
+import com.ntg.clothes_online_project.user.validation.UserValidation;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

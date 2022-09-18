@@ -1,4 +1,4 @@
-package com.ntg.clothes_online_project.jwt;
+package com.ntg.clothes_online_project.user.jwt;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;

@@ -1,14 +1,10 @@
-package com.ntg.clothes_online_project.validation;
+package com.ntg.clothes_online_project.product.validation;
 
-import com.ntg.clothes_online_project.dto.MessageResponse;
-import com.ntg.clothes_online_project.entity.Product;
-import com.ntg.clothes_online_project.entity.User;
-import com.ntg.clothes_online_project.repository.ProductRepository;
-import com.ntg.clothes_online_project.repository.UserRepository;
-import com.ntg.clothes_online_project.service.ProductService;
+import com.ntg.clothes_online_project.product.repository.ProductRepository;
+import com.ntg.clothes_online_project.product.entity.Product;
+import com.ntg.clothes_online_project.user.dto.MessageResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 @Component

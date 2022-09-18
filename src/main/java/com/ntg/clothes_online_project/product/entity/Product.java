@@ -1,4 +1,4 @@
-package com.ntg.clothes_online_project.entity;
+package com.ntg.clothes_online_project.product.entity;
 
 
 import javax.persistence.*;

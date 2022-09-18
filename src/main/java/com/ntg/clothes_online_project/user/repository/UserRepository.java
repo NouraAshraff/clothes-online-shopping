@@ -1,7 +1,7 @@
-package com.ntg.clothes_online_project.repository;
+package com.ntg.clothes_online_project.user.repository;
 
 
-import com.ntg.clothes_online_project.entity.User;
+import com.ntg.clothes_online_project.user.entity.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

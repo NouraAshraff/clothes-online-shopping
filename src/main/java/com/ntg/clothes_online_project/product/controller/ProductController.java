@@ -1,10 +1,10 @@
-package com.ntg.clothes_online_project.controller;
+package com.ntg.clothes_online_project.product.controller;
 
-import com.ntg.clothes_online_project.dto.MessageResponse;
-import com.ntg.clothes_online_project.entity.Product;
-import com.ntg.clothes_online_project.enums.Category;
-import com.ntg.clothes_online_project.enums.Size;
-import com.ntg.clothes_online_project.service.ProductService;
+import com.ntg.clothes_online_project.product.enums.Category;
+import com.ntg.clothes_online_project.product.enums.Size;
+import com.ntg.clothes_online_project.product.service.ProductService;
+import com.ntg.clothes_online_project.product.entity.Product;
+import com.ntg.clothes_online_project.user.dto.MessageResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
