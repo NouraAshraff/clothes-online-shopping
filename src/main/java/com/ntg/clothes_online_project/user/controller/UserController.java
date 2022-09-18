@@ -1,6 +1,4 @@
 package com.ntg.clothes_online_project.user.controller;
-
-
 import com.ntg.clothes_online_project.user.dto.LoginRequest;
 import com.ntg.clothes_online_project.user.dto.UpdateProfileRequest;
 import com.ntg.clothes_online_project.user.dto.UserDTO;
@@ -9,7 +7,6 @@ import com.ntg.clothes_online_project.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 

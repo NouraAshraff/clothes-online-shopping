@@ -36,7 +36,6 @@ public class UserService implements UserDetailsService {
     @Autowired
    private UserValidation userValidation;
 
-
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 
@@ -66,12 +65,9 @@ public class UserService implements UserDetailsService {
     public ResponseEntity<?> loginUser(LoginRequest loginRequest) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
-
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = jwtUtils.generateJwtToken(authentication);
-
         CustomUser userDetails = (CustomUser) authentication.getPrincipal();
-
         return ResponseEntity.ok(new LoginResponse(userDetails.getUserName(), userDetails.getUsername(), jwt));
     }
 
