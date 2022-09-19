@@ -39,7 +39,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 			"/swagger-ui/**",
 			"/spring-security-rest/**",
 			"/your-app-root/**",
-			"/com/ntg/clothes_online_project/user/register",
+			"/user/register",
 			"/com/ntg/clothes_online_project/user/login",
 			"/spring-security-rest/**",
 			"/user/login"
